@@ -1,0 +1,69 @@
+/*
+ * asm_func.s
+ *
+ *  Created on: 7/2/2025
+ *      Author: Hou Linxin
+ */
+   .syntax unified
+	.cpu cortex-m4
+	.fpu softvfp
+	.thumb
+
+		.global asm_func
+
+@ Start of executable code
+.section .text
+
+@ CG/[T]EE2028 Assignment 1, Sem 2, AY 2024/25
+@ (c) ECE NUS, 2025
+
+@ Write Student 1’s Name here:LI XIAOYANG
+@ Write Student 2’s Name here:DUAN YIHE
+
+@ Look-up table for registers:
+
+@ R0 building first item
+@ R1 entry first item
+@ R2 exit first item
+@ R3 result first item
+@ R4
+@ R5
+@ R6 counter
+@ R7 accumulated entry sum
+
+@ write your program from here:
+
+
+asm_func:
+ 	PUSH {R4-R9,R14}
+ 	@my code
+
+	MOV R6, #5 @ counter for summing up all entries
+	MOV R7, #0 @ accumulated entry value
+LOOP1:
+		LDR R4, [R1], #4 @ R4 holds each entry address
+		ADD R7, R4 @ R7 is the accumulated entry value.
+		SUBS R6, #1
+		BNE LOOP1
+
+	MOV R6, #5 @ counter value
+	MOV R8, #12
+LOOP2:
+		LDR R4, [R0], #4 @load the no. of cars in each section to R4
+		LDR R9, [R2], #4 @load the no, of cars exit in each section to R9
+		SUBS R5, R8, R4 @compute the remaining space in each section, value in R5
+		SUBS R7, R5 @total entry-remaining space, remaining entry in R7. See remaining entry is +ve or -ve
+		ITTE MI @if entry > remaining
+		SUBMI R5, R8, R7 @all remaining entering cars enter the current section, no. of car after entry in R5
+		SUBMI R5, R9
+		SUBPL R5, R8, R9 @final result after subtract exits in each section in R5
+
+		SUBS R6, #1
+		STR R5, [R3], #4
+		BNE LOOP2
+
+
+
+ 	POP {R4-R9,R14}
+
+	BX LR

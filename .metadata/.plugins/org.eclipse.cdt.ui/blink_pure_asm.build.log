@@ -1,4 +1,4 @@
-09:49:56 **** Build of configuration Debug for project blink_pure_asm ****
+10:09:09 **** Build of configuration Debug for project blink_pure_asm ****
 make -j16 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32l475vgtx.d" -MT"Startup/startup_stm32l475vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32l475vgtx.o" "../Startup/startup_stm32l475vgtx.s"
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o" "../Src/main.s"
@@ -23,5 +23,5 @@ Finished building: default.size.stdout
 Finished building: blink_pure_asm.list
  
 
-09:49:57 Build Finished. 0 errors, 5 warnings. (took 947ms)
+10:09:10 Build Finished. 0 errors, 5 warnings. (took 1s.88ms)
 
