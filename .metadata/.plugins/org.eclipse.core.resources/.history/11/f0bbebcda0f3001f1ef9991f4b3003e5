@@ -19,24 +19,63 @@
  ******************************************************************************
  */
 #include "stdio.h"
+#include <stdint.h>
+int entrySize = 8
+
+//****************************************************************************
+
+volatile unsigned int *DWT_CYCCNT   = (volatile unsigned int *)0xE0001004;
+volatile unsigned int *DWT_CONTROL  = (volatile unsigned int *)0xE0001000;
+volatile unsigned int *DWT_LAR      = (volatile unsigned int *)0xE0001FB0;
+volatile unsigned int *SCB_DHCSR    = (volatile unsigned int *)0xE000EDF0;
+volatile unsigned int *SCB_DEMCR    = (volatile unsigned int *)0xE000EDFC;
+volatile unsigned int *ITM_TER      = (volatile unsigned int *)0xE0000E00;
+volatile unsigned int *ITM_TCR      = (volatile unsigned int *)0xE0000E80;
+
+//****************************************************************************
+
+static int Debug_ITMDebug = 0;
+
+//****************************************************************************
+
+void EnableTiming(void)
+{
+  if ((*SCB_DHCSR & 1) && (*ITM_TER & 1)) // Enabled?
+    Debug_ITMDebug = 1;
+
+  *SCB_DEMCR |= 0x01000000;
+  *DWT_LAR = 0xC5ACCE55; // enable access
+  *DWT_CYCCNT = 0; // reset the counter
+  *DWT_CONTROL |= 1 ; // enable the counter
+}
+
+//****************************************************************************
+
+void Delay(uint32_t cycles)
+{
+  uint32_t start = *DWT_CYCCNT;
+
+  while((*DWT_CYCCNT - start) < cycles);
+}
+
 
 #define F 3
 #define S 2
 
 
-
-extern void asm_func(int* arg1, int* arg2, int* arg3, int* arg4,int arg5);
+extern void asm_func(int* arg1, int* arg2, int* arg3, int* arg4);
 extern void initialise_monitor_handles(void);
 
 int main(void)
 {
 	initialise_monitor_handles();
+	EnableTiming();
 	int i,j;
 
 	// test case 1
-//	int building[F][S] = {{8,8},{8,8},{8,8}};
-//	int entry[5] = {1,2,3,4,5};
-//	int exit[F][S] = {{1,2},{2,3},{3,4}};
+	int building[F][S] = {{8,8},{8,8},{8,8}};
+	int entry[5] = {1,2,3,4,5};
+	int exit[F][S] = {{1,2},{2,3},{3,4}};
 
 	// test case 2
 //	int building[F][S] = {{1,2},{3,4},{5,6}};
@@ -80,7 +119,7 @@ int main(void)
 //	int entry[5] = {1,2,3,4,5};
 //	int exit[F][S] = {{1,2}, {3,4}, {3,6}};
 
-	// test case 10 (variable F*S) remember to change constant above and result array below before testing
+//	 test case 10 (variable F*S) remember to change constant above and result array below before testing
 //		int building[F][S] = {{8,8},{8,8}};
 //		int entry[5] = {0,0,0,0,0};
 //		int exit[F][S] = {{1,1},{1,1}};
@@ -91,15 +130,17 @@ int main(void)
 //	int exit[F][S] = {{1}};
 
 	// test case 12 (variable entry array length)
-		int building[F][S] = {{8,8},{8,8},{8,8}};
-		int entry[8] = {1,1,1,1,1,1,1,1};
-		int exit[F][S] = {{1,1},{1,1},{1,1}};
-		int entrySize = 8;
-
+//		int building[F][S] = {{8,0},{0,0},{0,0}};
+//		int entry[8] = {1,1,1,1,1,1,1,1};
+//		int exit[F][S] = {{0,0},{0,0},{0,0}};
 
 	int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
 
-	asm_func((int*)building, (int*)entry, (int*)exit, (int*)result,entrySize);
+	uint32_t start_cycles = *DWT_CYCCNT;
+	asm_func((int*)building, (int*)entry, (int*)exit, (int*)result);
+	uint32_t end_cycles = *DWT_CYCCNT;
+	uint32_t cycles_taken = end_cycles - start_cycles;
+	printf("Execution time: %u cycles\n", cycles_taken);
 
 	// print result[][]
 	printf("RESULT\n");
