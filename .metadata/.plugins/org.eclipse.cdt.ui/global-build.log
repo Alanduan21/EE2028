@@ -191,3 +191,624 @@ Finished building: default.size.stdout
  
 Finished building: Assign1.list
  
+09:14:26 **** Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16704	    472	   2072	  19248	   4b30	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+09:26:51 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/asm_func.d" -MT"Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/asm_func.o" "../Src/asm_func.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/asm_func.s: Assembler messages:
+../Src/asm_func.s:4: Error: Thumb does not support this addressing mode -- `ldr R4,[R1],#4'
+../Src/asm_func.s:6: Error: instruction not supported in Thumb16 mode -- `subs R6,#1'
+../Src/asm_func.s:10: Error: only lo regs allowed with immediate -- `mov R8,#12'
+../Src/asm_func.s:12: Error: Thumb does not support this addressing mode -- `ldr R4,[R0],#4'
+../Src/asm_func.s:13: Error: lo register required -- `ldr R9,[R2],#4'
+../Src/asm_func.s:14: Error: lo register required -- `sub R5,R8,R4'
+../Src/asm_func.s:17: Error: Thumb does not support conditional execution
+../Src/asm_func.s:18: Error: Thumb does not support conditional execution
+../Src/asm_func.s:19: Error: Thumb does not support conditional execution
+../Src/asm_func.s:20: Error: Thumb does not support conditional execution
+../Src/asm_func.s:22: Error: bad arguments to instruction -- `cmp R7 R5'
+../Src/asm_func.s:23: Error: IT falling in the range of a previous IT block -- `it MI'
+../Src/asm_func.s:24: Error: Thumb does not support conditional execution
+../Src/asm_func.s:27: Error: instruction not allowed in IT block -- `sub R6,#1'
+../Src/asm_func.s:28: Error: instruction not allowed in IT block -- `str R4,[R3],#4'
+../Src/asm_func.s:29: Error: incorrect condition in IT block -- `bne LOOP2'
+../Src/asm_func.s:33: Error: invalid register list to push/pop instruction -- `pop {R4-R9,R14}'
+make: *** [Src/subdir.mk:29: Src/asm_func.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+09:27:58 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/asm_func.d" -MT"Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/asm_func.o" "../Src/asm_func.s"
+../Src/asm_func.s: Assembler messages:
+../Src/asm_func.s:56: Error: bad arguments to instruction -- `cmp R7 R5'
+make: *** [Src/subdir.mk:29: Src/asm_func.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+09:30:15 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/asm_func.d" -MT"Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/asm_func.o" "../Src/asm_func.s"
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16704	    472	   2072	  19248	   4b30	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+09:41:09 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16712	    472	   2072	  19256	   4b38	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+09:41:35 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16712	    472	   2072	  19256	   4b38	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+09:50:02 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16736	    472	   2072	  19280	   4b50	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+09:51:00 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16696	    472	   2072	  19240	   4b28	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:12:54 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/asm_func.d" -MT"Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/asm_func.o" "../Src/asm_func.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16672	    472	   2072	  19216	   4b10	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:13:59 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/asm_func.d" -MT"Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/asm_func.o" "../Src/asm_func.s"
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16672	    472	   2072	  19216	   4b10	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:15:58 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/asm_func.d" -MT"Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/asm_func.o" "../Src/asm_func.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:84:49: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                 ^
+../Src/main.c:84:49: note: (near initialization for 'building')
+../Src/main.c:84:55: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                       ^
+../Src/main.c:84:55: note: (near initialization for 'building')
+../Src/main.c:84:61: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                             ^
+../Src/main.c:84:61: note: (near initialization for 'building')
+../Src/main.c:84:67: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                                   ^
+../Src/main.c:84:67: note: (near initialization for 'building')
+../Src/main.c:84:73: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                                         ^
+../Src/main.c:84:73: note: (near initialization for 'building')
+../Src/main.c:86:45: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                             ^
+../Src/main.c:86:45: note: (near initialization for 'exit')
+../Src/main.c:86:51: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                   ^
+../Src/main.c:86:51: note: (near initialization for 'exit')
+../Src/main.c:86:57: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                         ^
+../Src/main.c:86:57: note: (near initialization for 'exit')
+../Src/main.c:86:63: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                               ^
+../Src/main.c:86:63: note: (near initialization for 'exit')
+../Src/main.c:86:69: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                                     ^
+../Src/main.c:86:69: note: (near initialization for 'exit')
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16720	    472	   2072	  19264	   4b40	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:16:27 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:84:49: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                 ^
+../Src/main.c:84:49: note: (near initialization for 'building')
+../Src/main.c:84:55: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                       ^
+../Src/main.c:84:55: note: (near initialization for 'building')
+../Src/main.c:84:61: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                             ^
+../Src/main.c:84:61: note: (near initialization for 'building')
+../Src/main.c:84:67: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                                   ^
+../Src/main.c:84:67: note: (near initialization for 'building')
+../Src/main.c:84:73: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                                         ^
+../Src/main.c:84:73: note: (near initialization for 'building')
+../Src/main.c:86:45: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                             ^
+../Src/main.c:86:45: note: (near initialization for 'exit')
+../Src/main.c:86:51: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                   ^
+../Src/main.c:86:51: note: (near initialization for 'exit')
+../Src/main.c:86:57: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                         ^
+../Src/main.c:86:57: note: (near initialization for 'exit')
+../Src/main.c:86:63: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                               ^
+../Src/main.c:86:63: note: (near initialization for 'exit')
+../Src/main.c:86:69: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                                     ^
+../Src/main.c:86:69: note: (near initialization for 'exit')
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16712	    472	   2072	  19256	   4b38	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:16:59 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:84:49: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                 ^
+../Src/main.c:84:49: note: (near initialization for 'building')
+../Src/main.c:84:55: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                       ^
+../Src/main.c:84:55: note: (near initialization for 'building')
+../Src/main.c:84:61: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                             ^
+../Src/main.c:84:61: note: (near initialization for 'building')
+../Src/main.c:84:67: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                                   ^
+../Src/main.c:84:67: note: (near initialization for 'building')
+../Src/main.c:84:73: warning: excess elements in array initializer
+   84 |         int building[F][S] = {{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}};
+      |                                                                         ^
+../Src/main.c:84:73: note: (near initialization for 'building')
+../Src/main.c:86:45: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                             ^
+../Src/main.c:86:45: note: (near initialization for 'exit')
+../Src/main.c:86:51: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                   ^
+../Src/main.c:86:51: note: (near initialization for 'exit')
+../Src/main.c:86:57: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                         ^
+../Src/main.c:86:57: note: (near initialization for 'exit')
+../Src/main.c:86:63: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                               ^
+../Src/main.c:86:63: note: (near initialization for 'exit')
+../Src/main.c:86:69: warning: excess elements in array initializer
+   86 |         int exit[F][S] = {{1,1},{1,1},{1,1},{1,1},{0,0},{0,0},{0,0},{0,0}};
+      |                                                                     ^
+../Src/main.c:86:69: note: (near initialization for 'exit')
+../Src/main.c:91:47: warning: excess elements in array initializer
+   91 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}};
+      |                                               ^
+../Src/main.c:91:47: note: (near initialization for 'result')
+../Src/main.c:91:53: warning: excess elements in array initializer
+   91 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}};
+      |                                                     ^
+../Src/main.c:91:53: note: (near initialization for 'result')
+../Src/main.c:91:59: warning: excess elements in array initializer
+   91 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}};
+      |                                                           ^
+../Src/main.c:91:59: note: (near initialization for 'result')
+../Src/main.c:91:65: warning: excess elements in array initializer
+   91 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}};
+      |                                                                 ^
+../Src/main.c:91:65: note: (near initialization for 'result')
+../Src/main.c:91:71: warning: excess elements in array initializer
+   91 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}};
+      |                                                                       ^
+../Src/main.c:91:71: note: (near initialization for 'result')
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16712	    472	   2072	  19256	   4b38	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:21:34 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16808	    472	   2072	  19352	   4b98	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:23:22 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:91:59: warning: excess elements in array initializer
+   91 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}};
+      |                                                           ^
+../Src/main.c:91:59: note: (near initialization for 'result')
+../Src/main.c:91:65: warning: excess elements in array initializer
+   91 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}};
+      |                                                                 ^
+../Src/main.c:91:65: note: (near initialization for 'result')
+../Src/main.c:91:71: warning: excess elements in array initializer
+   91 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}};
+      |                                                                       ^
+../Src/main.c:91:71: note: (near initialization for 'result')
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16816	    472	   2072	  19360	   4ba0	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:29:24 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/asm_func.d" -MT"Src/asm_func.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/asm_func.o" "../Src/asm_func.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:84:30: warning: missing braces around initializer [-Wmissing-braces]
+   84 |         int building[F][S] = {5};
+      |                              ^
+      |                               {}
+../Src/main.c:24:11: warning: excess elements in array initializer
+   24 | #define S 1
+      |           ^
+../Src/main.c:94:32: note: in expansion of macro 'S'
+   94 |         int result[F][S] = {{F,S},{0}};
+      |                                ^
+../Src/main.c:24:11: note: (near initialization for 'result[0]')
+   24 | #define S 1
+      |           ^
+../Src/main.c:94:32: note: in expansion of macro 'S'
+   94 |         int result[F][S] = {{F,S},{0}};
+      |                                ^
+../Src/main.c:94:35: warning: excess elements in array initializer
+   94 |         int result[F][S] = {{F,S},{0}};
+      |                                   ^
+../Src/main.c:94:35: note: (near initialization for 'result')
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16592	    472	   2072	  19136	   4ac0	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:33:12 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:94:42: warning: excess elements in array initializer
+   94 |                 int building[F][S] = {{8,8},{8,8},{8,8}};
+      |                                          ^
+../Src/main.c:94:42: note: (near initialization for 'building[0]')
+../Src/main.c:94:48: warning: excess elements in array initializer
+   94 |                 int building[F][S] = {{8,8},{8,8},{8,8}};
+      |                                                ^
+../Src/main.c:94:48: note: (near initialization for 'building[1]')
+../Src/main.c:94:45: warning: excess elements in array initializer
+   94 |                 int building[F][S] = {{8,8},{8,8},{8,8}};
+      |                                             ^
+../Src/main.c:94:45: note: (near initialization for 'building')
+../Src/main.c:94:54: warning: excess elements in array initializer
+   94 |                 int building[F][S] = {{8,8},{8,8},{8,8}};
+      |                                                      ^
+../Src/main.c:94:54: note: (near initialization for 'building[1]')
+../Src/main.c:94:51: warning: excess elements in array initializer
+   94 |                 int building[F][S] = {{8,8},{8,8},{8,8}};
+      |                                                   ^
+../Src/main.c:94:51: note: (near initialization for 'building')
+../Src/main.c:96:38: warning: excess elements in array initializer
+   96 |                 int exit[F][S] = {{1,1},{1,1},{1,1}};
+      |                                      ^
+../Src/main.c:96:38: note: (near initialization for 'exit[0]')
+../Src/main.c:96:44: warning: excess elements in array initializer
+   96 |                 int exit[F][S] = {{1,1},{1,1},{1,1}};
+      |                                            ^
+../Src/main.c:96:44: note: (near initialization for 'exit[1]')
+../Src/main.c:96:41: warning: excess elements in array initializer
+   96 |                 int exit[F][S] = {{1,1},{1,1},{1,1}};
+      |                                         ^
+../Src/main.c:96:41: note: (near initialization for 'exit')
+../Src/main.c:96:50: warning: excess elements in array initializer
+   96 |                 int exit[F][S] = {{1,1},{1,1},{1,1}};
+      |                                                  ^
+../Src/main.c:96:50: note: (near initialization for 'exit[1]')
+../Src/main.c:96:47: warning: excess elements in array initializer
+   96 |                 int exit[F][S] = {{1,1},{1,1},{1,1}};
+      |                                               ^
+../Src/main.c:96:47: note: (near initialization for 'exit')
+../Src/main.c:24:11: warning: excess elements in array initializer
+   24 | #define S 1
+      |           ^
+../Src/main.c:99:32: note: in expansion of macro 'S'
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                ^
+../Src/main.c:24:11: note: (near initialization for 'result[0]')
+   24 | #define S 1
+      |           ^
+../Src/main.c:99:32: note: in expansion of macro 'S'
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                ^
+../Src/main.c:99:38: warning: excess elements in array initializer
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                      ^
+../Src/main.c:99:38: note: (near initialization for 'result[1]')
+../Src/main.c:99:35: warning: excess elements in array initializer
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                   ^
+../Src/main.c:99:35: note: (near initialization for 'result')
+../Src/main.c:99:44: warning: excess elements in array initializer
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                            ^
+../Src/main.c:99:44: note: (near initialization for 'result[1]')
+../Src/main.c:99:41: warning: excess elements in array initializer
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                         ^
+../Src/main.c:99:41: note: (near initialization for 'result')
+../Src/main.c:99:50: warning: excess elements in array initializer
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                                  ^
+../Src/main.c:99:50: note: (near initialization for 'result[1]')
+../Src/main.c:99:47: warning: excess elements in array initializer
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                               ^
+../Src/main.c:99:47: note: (near initialization for 'result')
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16584	    472	   2072	  19128	   4ab8	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:33:44 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:99:47: warning: excess elements in array initializer
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                               ^
+../Src/main.c:99:47: note: (near initialization for 'result')
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16728	    472	   2072	  19272	   4b48	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:35:15 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:95:43: warning: excess elements in array initializer
+   95 |                 int entry[5] = {1,1,1,1,1,1,1,1};
+      |                                           ^
+../Src/main.c:95:43: note: (near initialization for 'entry')
+../Src/main.c:95:45: warning: excess elements in array initializer
+   95 |                 int entry[5] = {1,1,1,1,1,1,1,1};
+      |                                             ^
+../Src/main.c:95:45: note: (near initialization for 'entry')
+../Src/main.c:95:47: warning: excess elements in array initializer
+   95 |                 int entry[5] = {1,1,1,1,1,1,1,1};
+      |                                               ^
+../Src/main.c:95:47: note: (near initialization for 'entry')
+../Src/main.c:99:47: warning: excess elements in array initializer
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                               ^
+../Src/main.c:99:47: note: (near initialization for 'result')
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16736	    472	   2072	  19280	   4b50	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+10:40:58 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:99:47: warning: excess elements in array initializer
+   99 |         int result[F][S] = {{F,S},{0,0},{0,0},{0,0}};
+      |                                               ^
+../Src/main.c:99:47: note: (near initialization for 'result')
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\OneDrive - National University of Singapore\Desktop\Study\PreY2S2 Study\Pre-EE2028\Pre-EE2028\Labs\Lab2\Assign1\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assign1.elf has a LOAD segment with RWX permissions
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size  Assign1.elf 
+arm-none-eabi-objdump -h -S Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  16752	    472	   2072	  19296	   4b60	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 

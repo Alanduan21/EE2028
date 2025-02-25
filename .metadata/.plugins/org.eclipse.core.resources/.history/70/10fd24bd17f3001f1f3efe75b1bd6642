@@ -1,0 +1,35 @@
+MOV R6, #6 @counter for summing up all entries
+	MOV R7, #0
+LOOP1:
+		LDR R4, [R1], #4 @load the entry's each value to R4
+		ADD R7, R4 @ R7 is the accumulated entry value.
+		SUBS R6, #1
+		BNE LOOP1
+
+	MOV R6, #6 @COUNTER
+	MOV R8, #12
+LOOP2:
+		LDR R4, [R0], #4 @load the no. of cars in each section to R4
+		LDR R9, [R2], #4 @load the no, of cars exit in each section to R9
+		SUB R5, R8, R4 @compute the remaining space in each section, value in R5
+		CMP R7, R5 @compare entry and remaining space
+		ITTEE MI @if entry < remaining
+		ADDMI R4, R7 @all remaining entering cars enter the current section, no. of car after entry in R4
+		SUBMI R4, R9 @final result after subtract exits in each section in R4
+		SUBPL R4, R8, R9 @final result after subtract exits in each section in R4
+		SUBPL R7, R5 @update no. of cars that haven't entered
+
+		CMP R7 R5
+		IT MI
+		MOVMI R7, #0 @update no. of cars that haven't entered
+
+
+		SUB R6, #1
+		STR R4, [R3], #4 @store result
+		BNE LOOP2
+
+
+
+ 	POP {R4-R9,R14}
+
+	BX LR
