@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 2025-02-16 10:54:45,130 [INFO] Activator:176 - 
 
 
@@ -1527,3 +1528,6 @@
 
 2025-02-16 20:35:36,995 [INFO] Activator:177 - !SESSION log4j initialized
 2025-02-16 20:35:46,397 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+=======
+2025-03-21 00:12:19,467 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+>>>>>>> Stashed changes
