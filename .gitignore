@@ -1,4 +1,7 @@
 .metadata/
+.metadata/*.log
+.metadata/*.ini
+.metadata/.plugins/
 .settings/
 [Rr]elease
 [Dd]ebug
