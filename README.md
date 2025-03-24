@@ -1,11 +1,3 @@
-## advice received:
-
-1. can use rf module with an library 
-2. regarding the rf module, improve the data packet txrx timing, since txrx can’t be done at the same time, 
-3. state machine but what is it for 
-4. some weird latency issue
-5. can try the bluetooth module
-
 ### **Introduction**
 
 In Singapore's aging society, wearable health monitoring systems are increasingly used for elderly care to track key health metrics, detect emergencies, and provide real-time feedback. This assignment focuses on developing an STM32 microcontroller-based monitoring system capable of tracking body temperature, detecting falls, identifying abnormal movements, and monitoring body posture. The system will operate in two modes: **Standard Mode** for general health tracking and **Emergency Mode** for immediate intervention when thresholds of certain sensors are exceeded. Students will need to do a group presentation with slides along with a demonstration of the wearable device designed by them on the assessment day.
@@ -47,7 +39,7 @@ In Singapore's aging society, wearable health monitoring systems are increasingl
         - nnn.n stands for the Gyroscope reading from the sensor up to 2 decimal places.
         - X.XX, Y.YY and Z.ZZ are readings from Magnetometer sensor on x, y and z axes to 2 decimal places.
         - h.hh stands for Humidity sensor reading and b.bb stands for Barometer reading to 2 decimal places.
-- If **MODE_TOGGLE** *twice*  within a second during the Standard Mode, the device goes into Emergency Mode. **The printing of the data through UART to PC stops.**
+- If **MODE_TOGGLE** *twice* within a second during the Standard Mode, the device goes into Emergency Mode. **The printing of the data through UART to PC stops.**
 
 ### **Emergency Mode**
 
@@ -124,12 +116,28 @@ In conclusion,
 
 check my github project page: https://github.com/Alanduan21/EE2028
 
-W10: 
+W10: Finish basic functions (standard and emergency modes)
 
-W11:
+W11: Finish 80% of enhancement feature 
 
-W12:
+Weekend finish documentation
+
+W12: Finish 20% of enhancement feature
+
+update documentation
 
 # Project Management
 
-weekly meet twice
+W10: Mon, Fri, (Sat)
+
+W11: Fri, Sat
+
+W12: Mon
+
+## advice received:
+
+1. can use rf module with an library 
+2. regarding the rf module, improve the data packet txrx timing, since txrx can’t be done at the same time, 
+3. state machine but what is it for 
+4. some weird latency issue
+5. can try the bluetooth module
