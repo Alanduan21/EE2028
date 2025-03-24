@@ -110,7 +110,15 @@ In conclusion,
 4. wifi 
 5. board to board communication
 6. maybe buzzer 
-7. state machines (especially useful since we have different operation modes)
+7. maybe try how to run in low power
+8. state machines for different modes
+    1. Our wearable device has **multiple operational modes** and behaviors that depend on **external events** (e.g., button press, sensor thresholds).
+        
+        FSM helps us to:
+        
+        - Clearly define and manage each mode (`Standard Mode`, `Emergency Mode`)
+        - Make the code **modular**, **scalable**, and **easy to debug**
+        - Handle complex transitions **cleanly** without deep nesting
 
 # Project Timeline
 
