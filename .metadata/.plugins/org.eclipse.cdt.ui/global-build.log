@@ -4686,3 +4686,1470 @@ Finished building: default.size.stdout
  
 Finished building: Assignment2.list
  
+20:04:27 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:283:18: error: 'accel_data' undeclared (first use in this function)
+  283 |         if (fabs(accel_data[0]) < 0.3f && fabs(accel_data[1]) < 0.3f && fabs(accel_data[2]) < 0.3f)
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:283:18: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:05:21 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:286:17: error: 'accel_data' undeclared (first use in this function); did you mean 'accel_data_i16'?
+  286 |                 accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
+      |                 ^~~~~~~~~~
+      |                 accel_data_i16
+../Core/Src/main.c:286:17: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:06:07 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:286:17: error: 'accel_data' undeclared (first use in this function); did you mean 'accel_data_i16'?
+  286 |                 accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
+      |                 ^~~~~~~~~~
+      |                 accel_data_i16
+../Core/Src/main.c:286:17: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:06:59 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:286:17: error: 'accel_data' undeclared (first use in this function); did you mean 'accel_data_i16'?
+  286 |                 accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
+      |                 ^~~~~~~~~~
+      |                 accel_data_i16
+../Core/Src/main.c:286:17: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:16:48 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:71:1: warning: data definition has no type or storage class
+   71 | BSP_ACCELERO_AccGetXYZ(accel_data_i16);         // read accelerometer
+      | ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:71:1: warning: type defaults to 'int' in declaration of 'BSP_ACCELERO_AccGetXYZ' [-Wimplicit-int]
+../Core/Src/main.c:71:1: warning: parameter names (without types) in function declaration
+../Core/Src/main.c:71:1: error: conflicting types for 'BSP_ACCELERO_AccGetXYZ'; have 'int()'
+In file included from ../Core/Src/main.c:13:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_accelero.h:93:6: note: previous declaration of 'BSP_ACCELERO_AccGetXYZ' with type 'void(int16_t *)' {aka 'void(short int *)'}
+   93 | void BSP_ACCELERO_AccGetXYZ(int16_t *pDataXYZ);
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:72:1: warning: data definition has no type or storage class
+   72 | accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
+      | ^~~~~~~~~~
+../Core/Src/main.c:72:1: warning: type defaults to 'int' in declaration of 'accel_data' [-Wimplicit-int]
+../Core/Src/main.c:72:17: error: invalid initializer
+   72 | accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
+      |                 ^
+../Core/Src/main.c:73:1: warning: data definition has no type or storage class
+   73 | accel_data[1] = (float)accel_data_i16[1] * (9.8/1000.0f);
+      | ^~~~~~~~~~
+../Core/Src/main.c:73:1: warning: type defaults to 'int' in declaration of 'accel_data' [-Wimplicit-int]
+../Core/Src/main.c:73:1: error: conflicting types for 'accel_data'; have 'int[1]'
+../Core/Src/main.c:72:1: note: previous definition of 'accel_data' with type 'int[0]'
+   72 | accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
+      | ^~~~~~~~~~
+../Core/Src/main.c:73:17: error: invalid initializer
+   73 | accel_data[1] = (float)accel_data_i16[1] * (9.8/1000.0f);
+      |                 ^
+../Core/Src/main.c:74:1: warning: data definition has no type or storage class
+   74 | accel_data[2] = (float)accel_data_i16[2] * (9.8/1000.0f);
+      | ^~~~~~~~~~
+../Core/Src/main.c:74:1: warning: type defaults to 'int' in declaration of 'accel_data' [-Wimplicit-int]
+../Core/Src/main.c:74:1: error: conflicting types for 'accel_data'; have 'int[2]'
+../Core/Src/main.c:72:1: note: previous definition of 'accel_data' with type 'int[0]'
+   72 | accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
+      | ^~~~~~~~~~
+../Core/Src/main.c:74:17: error: invalid initializer
+   74 | accel_data[2] = (float)accel_data_i16[2] * (9.8/1000.0f);
+      |                 ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:133:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  133 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:218:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  218 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:19:00 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:125:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  125 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:210:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  210 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:284:9: error: 'accel_data' undeclared (first use in this function); did you mean 'accel_data_i16'?
+  284 |         accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
+      |         ^~~~~~~~~~
+      |         accel_data_i16
+../Core/Src/main.c:284:9: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:20:35 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:116:33: error: 'accel_data' undeclared (first use in this function); did you mean 'accel_data_i16'?
+  116 |                                 accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
+      |                                 ^~~~~~~~~~
+      |                                 accel_data_i16
+../Core/Src/main.c:116:33: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:125:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  125 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:210:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  210 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:20:52 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34176	    856	   2432	  37464	   9258	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:24:08 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34184	    856	   2432	  37472	   9260	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:28:02 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34408	    856	   2432	  37696	   9340	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:29:03 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34184	    856	   2432	  37472	   9260	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:29:19 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-size  Assignment2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34184	    856	   2432	  37472	   9260	Assignment2.elf
+Finished building: default.size.stdout
+ 
+20:30:28 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34408	    856	   2432	  37696	   9340	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:34:09 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:140:1: error: unknown type name 'x'
+  140 | x
+      | ^
+../Core/Src/main.c:146:182: warning: format '%f' expects argument of type 'double', but argument 17 has type 'int' [-Wformat=]
+  146 |                                         sprintf(buffer, "%03d_TEMP_%.2f_ACC_%.2f_%.2f_%.2f  \r\n %03d GYRO_%.2f_%.2f_%.2f_MAGNETO_%.2f_%.2f_%.2f \r\n %03d HUMIDITY_%.2f and BARO_%.2f \r\n", seconds_count, temp_data, accel_data[0], accel_data[1], accel_data[2], seconds_count, gyro_data[0], gyro_data[1], gyro_data[2], magneto_data[0], magneto_data[1], magneto_data[2], seconds_count, humidity_data, pressure_data);
+      |                                                                                                                                                                                   ~~~^                                                                                                                                                                                                                         ~~~~~~~~~~~~~
+      |                                                                                                                                                                                      |                                                                                                                                                                                                                         |
+      |                                                                                                                                                                                      double                                                                                                                                                                                                                    int
+      |                                                                                                                                                                                   %.2d
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:96:15: warning: unused variable 'pressure_data' [-Wunused-variable]
+   96 |         float pressure_data;
+      |               ^~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:34:40 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:211:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  211 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34376	    856	   2432	  37664	   9320	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:34:56 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-size  Assignment2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34376	    856	   2432	  37664	   9320	Assignment2.elf
+Finished building: default.size.stdout
+ 
+20:38:33 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34376	    856	   2432	  37664	   9320	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:39:35 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34376	    856	   2432	  37664	   9320	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:40:34 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:291:18: error: 'accel_data' undeclared (first use in this function)
+  291 |         if (fabs(accel_data[0]) > 1  fabs(accel_data[1]) > 1)
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:291:18: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:291:36: error: expected ')' before 'fabs'
+  291 |         if (fabs(accel_data[0]) > 1  fabs(accel_data[1]) > 1)
+      |            ~                       ^ ~~~~
+      |                                    )
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:40:45 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34096	    832	   2432	  37360	   91f0	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:41:43 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:286:15: warning: variable 'accel_data' set but not used [-Wunused-but-set-variable]
+  286 |         float accel_data[3];
+      |               ^~~~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34280	    832	   2432	  37544	   92a8	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:42:01 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-size  Assignment2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34280	    832	   2432	  37544	   92a8	Assignment2.elf
+Finished building: default.size.stdout
+ 
+20:43:26 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:286:15: warning: variable 'accel_data' set but not used [-Wunused-but-set-variable]
+  286 |         float accel_data[3];
+      |               ^~~~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34280	    832	   2440	  37552	   92b0	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:44:20 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:291:36: error: expected ')' before 'fabs'
+  291 |         if (fabs(accel_data[0]) > 1  fabs(accel_data[1]) > 1)
+      |            ~                       ^ ~~~~
+      |                                    )
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:44:40 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34216	    856	   2440	  37512	   9288	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:48:07 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34176	    856	   2440	  37472	   9260	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:49:41 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34216	    856	   2440	  37512	   9288	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:55:38 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34224	    856	   2440	  37520	   9290	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:57:43 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:212:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  212 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34320	    856	   2440	  37616	   92f0	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+20:58:05 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-size  Assignment2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34320	    856	   2440	  37616	   92f0	Assignment2.elf
+Finished building: default.size.stdout
+ 
+21:05:14 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:219:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  219 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34368	    856	   2440	  37664	   9320	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+14:53:53 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:12:10: fatal error: i2c.h: No such file or directory
+   12 | #include "i2c.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+21:28:43 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:132:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  132 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:219:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  219 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:288:9: error: too few arguments to function 'sprintf'
+  288 |         sprintf("hello world");
+      |         ^~~~~~~
+In file included from ../Core/Src/main.c:10:
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:9: note: declared here
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+21:30:57 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:132:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  132 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:219:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  219 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:288:26: warning: 'hello world' directive writing 11 bytes into a region of size 3 [-Wformat-overflow=]
+  288 |         sprintf("%s","hello world");
+      |                       ~~~^~~~~~~~
+../Core/Src/main.c:288:9: note: 'sprintf' output 12 bytes into a destination of size 3
+  288 |         sprintf("%s","hello world");
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34112	    832	   2432	  37376	   9200	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+23:29:02 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:135:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  135 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:222:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  222 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:377:1: warning: data definition has no type or storage class
+  377 | freeFall();
+      | ^~~~~~~~
+../Core/Src/main.c:377:1: warning: type defaults to 'int' in declaration of 'freeFall' [-Wimplicit-int]
+../Core/Src/main.c:377:1: error: conflicting types for 'freeFall'; have 'int()'
+../Core/Src/main.c:369:6: note: previous definition of 'freeFall' with type 'void()'
+  369 | void freeFall(){
+      |      ^~~~~~~~
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:32:42 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:89:9: warning: implicit declaration of function 'freeFall' [-Wimplicit-function-declaration]
+   89 |         freeFall();
+      |         ^~~~~~~~
+../Core/Src/main.c:136:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  136 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:223:49: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  223 |                                 BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 |
+      |                                                 int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:370:6: warning: conflicting types for 'freeFall'; have 'void()'
+  370 | void freeFall(){
+      |      ^~~~~~~~
+../Core/Src/main.c:89:9: note: previous implicit declaration of 'freeFall' with type 'void()'
+   89 |         freeFall();
+      |         ^~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34200	    856	   2504	  37560	   92b8	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+23:39:52 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:91:17: warning: implicit declaration of function 'freeFall' [-Wimplicit-function-declaration]
+   91 |                 freeFall();
+      |                 ^~~~~~~~
+../Core/Src/main.c:138:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  138 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:225:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  225 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:410:14: warning: conflicting types for 'freeFall'; have 'void(void)'
+  410 |         void freeFall(void)
+      |              ^~~~~~~~
+../Core/Src/main.c:91:17: note: previous implicit declaration of 'freeFall' with type 'void(void)'
+   91 |                 freeFall();
+      |                 ^~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `MX_I2C1_Init':
+C:/Users/dtc20/Downloads/Assignment2/Assignment2/Debug/../Core/Src/main.c:403: undefined reference to `Error_Handler'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:71: Assignment2.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:40:27 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:91:17: warning: implicit declaration of function 'freeFall' [-Wimplicit-function-declaration]
+   91 |                 freeFall();
+      |                 ^~~~~~~~
+../Core/Src/main.c:138:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  138 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:225:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  225 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:403:14: warning: conflicting types for 'freeFall'; have 'void(void)'
+  403 |         void freeFall(void)
+      |              ^~~~~~~~
+../Core/Src/main.c:91:17: note: previous implicit declaration of 'freeFall' with type 'void(void)'
+   91 |                 freeFall();
+      |                 ^~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34568	    856	   2504	  37928	   9428	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+22:41:42 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:92:17: warning: implicit declaration of function 'freeFall' [-Wimplicit-function-declaration]
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+../Core/Src/main.c:139:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:226:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  226 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:404:14: warning: conflicting types for 'freeFall'; have 'void()'
+  404 |         void freeFall()
+      |              ^~~~~~~~
+../Core/Src/main.c:92:17: note: previous implicit declaration of 'freeFall' with type 'void()'
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34568	    856	   2504	  37928	   9428	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+22:44:18 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:92:17: warning: implicit declaration of function 'freeFall' [-Wimplicit-function-declaration]
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+../Core/Src/main.c:139:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:226:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  226 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:410:14: warning: conflicting types for 'freeFall'; have 'void()'
+  410 |         void freeFall()
+      |              ^~~~~~~~
+../Core/Src/main.c:92:17: note: previous implicit declaration of 'freeFall' with type 'void()'
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `MX_I2C1_Init':
+C:/Users/dtc20/Downloads/Assignment2/Assignment2/Debug/../Core/Src/main.c:404: undefined reference to `Error_Handler'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:71: Assignment2.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+22:46:33 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:92:17: warning: implicit declaration of function 'freeFall' [-Wimplicit-function-declaration]
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+../Core/Src/main.c:139:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:226:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  226 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:410:14: warning: conflicting types for 'freeFall'; have 'void()'
+  410 |         void freeFall()
+      |              ^~~~~~~~
+../Core/Src/main.c:92:17: note: previous implicit declaration of 'freeFall' with type 'void()'
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+../Core/Src/main.c: In function 'Error_Handler':
+../Core/Src/main.c:451:24: error: expected ')' before ':' token
+  451 |             printf("%s":"Bucked");
+      |                   ~    ^
+      |                        )
+../Core/Src/main.c:451:22: warning: format '%s' expects a matching 'char *' argument [-Wformat=]
+  451 |             printf("%s":"Bucked");
+      |                     ~^
+      |                      |
+      |                      char *
+make: *** [Core/Src/subdir.mk:31: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+22:47:36 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:92:17: warning: implicit declaration of function 'freeFall' [-Wimplicit-function-declaration]
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+../Core/Src/main.c:139:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:226:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  226 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:410:14: warning: conflicting types for 'freeFall'; have 'void()'
+  410 |         void freeFall()
+      |              ^~~~~~~~
+../Core/Src/main.c:92:17: note: previous implicit declaration of 'freeFall' with type 'void()'
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34648	    856	   2504	  38008	   9478	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+23:07:59 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:92:17: warning: implicit declaration of function 'freeFall' [-Wimplicit-function-declaration]
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+../Core/Src/main.c:139:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:226:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  226 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:410:14: warning: conflicting types for 'freeFall'; have 'void()'
+  410 |         void freeFall()
+      |              ^~~~~~~~
+../Core/Src/main.c:92:17: note: previous implicit declaration of 'freeFall' with type 'void()'
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34648	    856	   2504	  38008	   9478	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+23:09:40 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:92:17: warning: implicit declaration of function 'freeFall' [-Wimplicit-function-declaration]
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+../Core/Src/main.c:139:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+In file included from ../Core/Src/main.c:16:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c:226:57: warning: passing argument 1 of 'BSP_GYRO_GetXYZ' from incompatible pointer type [-Wincompatible-pointer-types]
+  226 |                                         BSP_GYRO_GetXYZ(gyro_pointer);
+      |                                                         ^~~~~~~~~~~~
+      |                                                         |
+      |                                                         int16_t * {aka short int *}
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:92:29: note: expected 'float *' but argument is of type 'int16_t *' {aka 'short int *'}
+   92 | void BSP_GYRO_GetXYZ(float* pfData);
+      |                      ~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:410:14: warning: conflicting types for 'freeFall'; have 'void()'
+  410 |         void freeFall()
+      |              ^~~~~~~~
+../Core/Src/main.c:92:17: note: previous implicit declaration of 'freeFall' with type 'void()'
+   92 |                 freeFall();
+      |                 ^~~~~~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  34648	    856	   2504	  38008	   9478	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
