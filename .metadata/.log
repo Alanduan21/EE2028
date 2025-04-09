@@ -5206,13 +5206,21 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-08 21:26:36.706
 !MESSAGE Started RMI Server, listening on port 41337
+<<<<<<< HEAD
 !SESSION 2025-04-09 15:50:04.392 -----------------------------------------------
+=======
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-04-08 23:09:52.265
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2025-04-08 23:10:39.649 -----------------------------------------------
+>>>>>>> 5b8444664d4b8a3a8cb843fb40d41be4e7504722
 eclipse.buildId=Version 1.16.1
 java.version=17.0.11
 java.vendor=Eclipse Adoptium
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_SG
 Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
+<<<<<<< HEAD
 !ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-09 15:50:09.048
 !MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
 
@@ -5220,6 +5228,51 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 !MESSAGE Log4j2 initialized with config file C:\Users\dtc20\STM32CubeIDE\workspace_1.16.1\EE2028_Lab1\.metadata\.log4j2.xml
 
 !ENTRY org.eclipse.ui 4 4 2025-04-09 15:50:09.747
+=======
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-08 23:10:47.390
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-04-08 23:10:47.392
+!MESSAGE Log4j2 initialized with config file C:\Users\dtc20\STM32CubeIDE\workspace_1.16.1\EE2028_Lab1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-08 23:10:54.966
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-04-08 23:17:11.736
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.debug.core.DebugPlugin$EventDispatchJob
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-04-08 23:17:11.738
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2025-04-09 14:05:54.700 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_SG
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-09 14:06:14.092
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-04-09 14:06:14.102
+!MESSAGE Log4j2 initialized with config file C:\Users\dtc20\STM32CubeIDE\workspace_1.16.1\EE2028_Lab1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-09 14:06:24.494
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2025-04-09 15:52:55.181 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_SG
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-09 15:52:59.817
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-04-09 15:52:59.819
+!MESSAGE Log4j2 initialized with config file C:\Users\dtc20\STM32CubeIDE\workspace_1.16.1\EE2028_Lab1\.metadata\.log4j2.xml
+
+!ENTRY org.eclipse.ui 4 4 2025-04-09 15:53:00.497
+>>>>>>> 5b8444664d4b8a3a8cb843fb40d41be4e7504722
 !MESSAGE Unable to create part
 !STACK 1
 org.eclipse.ui.PartInitException: Cannot determine URI for '/Assignment2/Core/Src/main.c'.
@@ -5362,7 +5415,11 @@ Caused by: org.eclipse.core.runtime.CoreException: Cannot determine URI for '/As
 	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2292)
 	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3184)
 	... 121 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2025-04-09 15:50:09.748
+=======
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2025-04-09 15:53:00.498
+>>>>>>> 5b8444664d4b8a3a8cb843fb40d41be4e7504722
 !MESSAGE Cannot determine URI for '/Assignment2/Core/Src/main.c'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Cannot determine URI for '/Assignment2/Core/Src/main.c'.
@@ -5502,6 +5559,7 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/Assignment2/C
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2025-04-09 15:50:09.749
 !MESSAGE Cannot determine URI for '/Assignment2/Core/Src/main.c'.
 
@@ -5940,3 +5998,46 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/Assignment2/D
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-04-09 15:51:14.221
 !MESSAGE Indexed 'Assignment2' (46 sources, 120 headers) in 4.89 sec: 12,090 declarations; 63,569 references; 2 unresolved inclusions; 17 syntax errors; 24 unresolved names (0.032%)
+=======
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2025-04-09 15:53:00.499
+!MESSAGE Cannot determine URI for '/Assignment2/Core/Src/main.c'.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-09 15:53:03.819
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-09 15:53:32.958
+!MESSAGE Indexed 'Assignment2' (46 sources, 120 headers) in 4.66 sec: 12,090 declarations; 63,569 references; 2 unresolved inclusions; 17 syntax errors; 24 unresolved names (0.032%)
+!SESSION 2025-04-09 15:55:40.493 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_SG
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-09 15:55:45.185
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-04-09 15:55:45.187
+!MESSAGE Log4j2 initialized with config file C:\Users\dtc20\STM32CubeIDE\workspace_1.16.1\EE2028_Lab1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-09 15:55:50.962
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2025-04-09 15:59:35.611 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_SG
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-09 16:00:23.781
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-04-09 16:00:23.795
+!MESSAGE Log4j2 initialized with config file C:\Users\dtc20\STM32CubeIDE\workspace_1.16.1\EE2028_Lab1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-09 16:00:39.993
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-04-09 17:04:06.583
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+>>>>>>> 5b8444664d4b8a3a8cb843fb40d41be4e7504722
