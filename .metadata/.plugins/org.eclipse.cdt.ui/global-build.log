@@ -8928,3 +8928,194 @@ Finished building: default.size.stdout
  
 Finished building: Assignment2.list
  
+16:01:25 **** Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-size  Assignment2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  45816	    872	   4592	  51280	   c850	Assignment2.elf
+Finished building: default.size.stdout
+ 
+16:04:31 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:96:17: warning: unused variable 'resp' [-Wunused-variable]
+   96 |         uint8_t resp[MAX_LENGTH];       // response packet
+      |                 ^~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  45832	    872	   4592	  51296	   c860	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+16:08:18 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:48: error: 'rx_char' undeclared (first use in this function)
+  115 |                 if (HAL_UART_Receive(&huart1, &rx_char, 1, 0) == HAL_OK)
+      |                                                ^~~~~~~
+../Core/Src/main.c:115:48: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:117:45: error: 'echo_buffer' undeclared (first use in this function)
+  117 |                                     sprintf(echo_buffer, "%c", rx_char);
+      |                                             ^~~~~~~~~~~
+../Core/Src/main.c:235:22: warning: unused variable 'echo_buffer' [-Wunused-variable]
+  235 |                 char echo_buffer[8];  // dedicated, small buffer
+      |                      ^~~~~~~~~~~
+../Core/Src/main.c:234:25: warning: unused variable 'rx_char' [-Wunused-variable]
+  234 |                 uint8_t rx_char;
+      |                         ^~~~~~~
+../Core/Src/main.c:96:17: warning: unused variable 'resp' [-Wunused-variable]
+   96 |         uint8_t resp[MAX_LENGTH];       // response packet
+      |                 ^~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:09:03 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:96:17: warning: unused variable 'resp' [-Wunused-variable]
+   96 |         uint8_t resp[MAX_LENGTH];       // response packet
+      |                 ^~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  45832	    872	   4592	  51296	   c860	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+16:11:51 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:96:17: warning: unused variable 'resp' [-Wunused-variable]
+   96 |         uint8_t resp[MAX_LENGTH];       // response packet
+      |                 ^~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  45832	    872	   4592	  51296	   c860	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+16:34:06 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:120:48: warning: passing argument 2 of 'HAL_UART_Transmit' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  120 |                     HAL_UART_Transmit(&huart1, &uart_rx_char, 1, 0xFFFF);
+      |                                                ^~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:392,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:7:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1609:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+ 1609 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+../Core/Src/main.c:99:17: warning: unused variable 'resp' [-Wunused-variable]
+   99 |         uint8_t resp[MAX_LENGTH];       // response packet
+      |                 ^~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  46112	    872	   4592	  51576	   c978	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+16:37:35 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
+../Core/Src/stm32l4xx_it.c: In function 'USART1_IRQHandler':
+../Core/Src/stm32l4xx_it.c:249:26: error: 'huart1' undeclared (first use in this function)
+  249 |     HAL_UART_IRQHandler(&huart1);
+      |                          ^~~~~~
+../Core/Src/stm32l4xx_it.c:249:26: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/stm32l4xx_it.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:37:40 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
+../Core/Src/stm32l4xx_it.c: In function 'USART1_IRQHandler':
+../Core/Src/stm32l4xx_it.c:249:26: error: 'huart1' undeclared (first use in this function)
+  249 |     HAL_UART_IRQHandler(&huart1);
+      |                          ^~~~~~
+../Core/Src/stm32l4xx_it.c:249:26: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/stm32l4xx_it.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+16:44:05 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  47000	    872	   4592	  52464	   ccf0	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
+16:58:55 **** Incremental Build of configuration Debug for project Assignment2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L475xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:120:48: warning: passing argument 2 of 'HAL_UART_Transmit' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  120 |                     HAL_UART_Transmit(&huart1, &uart_rx_char, 1, 0xFFFF);
+      |                                                ^~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:392,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:7:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1609:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+ 1609 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+../Core/Src/main.c:99:17: warning: unused variable 'resp' [-Wunused-variable]
+   99 |         uint8_t resp[MAX_LENGTH];       // response packet
+      |                 ^~~~
+arm-none-eabi-gcc -o "Assignment2.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\dtc20\Downloads\Assignment2\Assignment2\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment2.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Assignment2.elf has a LOAD segment with RWX permissions
+Finished building target: Assignment2.elf
+ 
+arm-none-eabi-size  Assignment2.elf 
+arm-none-eabi-objdump -h -S Assignment2.elf  > "Assignment2.list"
+   text	   data	    bss	    dec	    hex	filename
+  47024	    872	   4592	  52488	   cd08	Assignment2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assignment2.list
+ 
