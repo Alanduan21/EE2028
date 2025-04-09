@@ -9,6 +9,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\dtc20\Downloads\blink_by_HAL"/>
 			<item value="C:\Users\dtc20\Downloads\demo_exti_print\demo_exti_print"/>
 			<item value="C:\Users\dtc20\Downloads\Assignment2\Assignment2"/>
 			<item value="C:\Users\dtc20\Downloads\Assignment2"/>
